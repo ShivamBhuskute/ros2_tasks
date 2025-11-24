@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="robocon_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Robot constants -->
+  <xacro:property name="wheel_radius" value="0.05"/>
+  <xacro:property name="wheel_width" value="0.03"/>
+  <xacro:property name="base_size_x" value="2.5"/>
+  <xacro:property name="base_size_y" value="1.5"/>
+  <xacro:property name="base_height" value="0.1"/>
+
+  <link name="world"></link>
+
+  <!-- BASE LINK -->
+<link name="base_link">
+  <visual>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <geometry><box size="2.5 1.5 0.3"/></geometry>  <!-- thicker -->
+    <material name="debug_green"><color rgba="0 1 0 1"/></material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <geometry><box size="2.5 1.5 0.3"/></geometry>
+  </collision>
+  <inertial>
+    <mass value="5"/>
+    <inertia ixx="0.5" ixy="0" ixz="0" iyy="0.5" iyz="0" izz="0.5"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+  </inertial>
+</link>
+
+</robot>
